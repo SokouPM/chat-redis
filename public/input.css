@@ -1,0 +1,33 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+	--primary-color: #e80000;
+	--secondary-color: #ffd0d0;
+}
+
+header, main form {
+	background-color: var(--secondary-color);
+	color: black;
+}
+
+ul li.user-message {
+	border-radius: 10px 10px 0 10px;
+	color: white;
+	background-color: var(--primary-color);
+}
+
+ul li.contact-message {
+	border-radius: 10px 10px 10px 0;
+	margin-right: auto;
+	background-color: var(--secondary-color);
+}
+
+form label .message:focus, select:focus {
+	outline: var(--primary-color) auto 5px;
+}
+
+form button[type="submit"] {
+	background-color: var(--primary-color);
+}

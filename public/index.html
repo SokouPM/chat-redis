@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Chat Redis App</title>
+	<link rel="stylesheet" href="/output.css">
+	<link rel="icon" href="/favicon.ico" type="image/ico">
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div id="app" class="h-screen overflow-hidden flex flex-col">
+	<header class="p-5 flex items-center justify-start shadow">
+		<div class="rounded-full w-[70px] h-[70px] bg-white flex items-center justify-center mr-2">
+			<img src="https://dwglogo.com/wp-content/uploads/2017/12/1100px_Redis_Logo_01.png" alt=""
+			     class="w-full"/>
+		</div>
+		<h1 class="text-5xl font-bold">ChatRedis</h1>
+
+		<label class="ml-auto">
+			User selected (For testing) :
+			<select class="bg-white rounded px-1.5 py-1 cursor-pointer" id="user">
+				<option value="John Doe" selected>John Doe</option>
+				<option value="Jane Doe">Jane Doe</option>
+			</select>
+		</label>
+	</header>
+	<main class="flex-1 overflow-auto flex flex-col justify-between items-stretch">
+		<ul class="messages-list flex-1 overflow-y-auto w-full md:px-40">
+			<!-- Messages list will be displayed here -->
+			<li class="text-center mt-5">
+				Loading messages...
+			</li>
+		</ul>
+		<form class="p-2 flex items-center justify-center w-full">
+			<label class="relative w-full mr-2">
+				<textarea
+					class="message resize-none w-full rounded px-1.5 py-1"
+					placeholder="Votre message..."
+					rows="3"
+					maxlength="150"
+				></textarea>
+				<span class="char-count absolute bottom-1.5 right-1 text-sm opacity-75 select-none cursor-text">0/150</span>
+			</label>
+			<button
+				type="submit"
+				class="w-[50px] h-[50px] rounded-full flex items-center justify-center transition-all hover:opacity-50 hover:scale-110 active:scale-100"
+			>
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M16.7987 15.8135L4.82599 17.8081C4.68834 17.8311 4.55917 17.8899 4.45146 17.9786C4.34375 18.0673 4.26131 18.1829 4.21241 18.3135L0.0842631 29.372C-0.309954 30.3892 0.753478 31.3587 1.72948 30.8692L30.342 16.5653C30.5398 16.4662 30.706 16.314 30.8222 16.1258C30.9385 15.9376 31 15.7208 31 15.4996C31 15.2785 30.9385 15.0617 30.8222 14.8735C30.706 14.6853 30.5398 14.5331 30.342 14.434L1.72948 0.130099C0.753478 -0.357823 -0.309954 0.611664 0.0842631 1.62724L4.214 12.6857C4.2629 12.8164 4.34534 12.9319 4.45305 13.0207C4.56076 13.1094 4.68993 13.1682 4.82758 13.1912L16.8003 15.1858C16.875 15.1977 16.943 15.2358 16.9921 15.2934C17.0412 15.3509 17.0681 15.424 17.0681 15.4996C17.0681 15.5753 17.0412 15.6484 16.9921 15.7059C16.943 15.7635 16.875 15.8016 16.8003 15.8135H16.7987Z"
+						fill="white"
+					/>
+				</svg>
+			</button>
+		</form>
+	</main>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
