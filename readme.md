@@ -10,7 +10,7 @@ For me, it's a way to learn how to use Socket.io and Redis as a message broker a
 **_You need to have Docker and Node.js with NPM installed on your machine to run this application._**
 
 1. Clone the repository
-2. Run `docker run --name docker-redis -p 6379:6379 -d redis`
+2. Run `docker run --name docker-redis -p 6379:6379 -it redis/redis-stack-server:latest`
 
    _This will dowload the Redis image and create a Redis container running on your machine with the name `docker-redis`
    and the port `6379` exposed_
